@@ -51,7 +51,7 @@ public class BMICalc extends JFrame {
         txtHeight.setBounds(150, 20, 200, 30);
         contentPane.add(txtHeight);
         
-        cbHeightUnit = new JComboBox<>(new String[] {"cm", "m"});
+        cbHeightUnit = new JComboBox<>(new String[] {"cm"});
         cbHeightUnit.setFont(new Font("#9Slide02 Noi dung dai", Font.PLAIN, 16));
         cbHeightUnit.setBounds(360, 20, 50, 30);
         contentPane.add(cbHeightUnit);
@@ -112,9 +112,6 @@ public class BMICalc extends JFrame {
         
 	private void calculateBMI() {
         double height = Double.parseDouble(txtHeight.getText());
-        if (cbHeightUnit.getSelectedItem().equals("cm")) {
-            height /= 100; // convert cm to m
-        }
         double weight = Double.parseDouble(txtWeight.getText());
         double bmi = weight / (height * height);
         txtBMI.setText(String.format("%.2f", bmi));
