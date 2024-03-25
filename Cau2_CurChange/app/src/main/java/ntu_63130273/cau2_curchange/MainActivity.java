@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import java.text.DecimalFormat;
 
+import tiil.edu.cau2_curchange.R;
+
 public class MainActivity extends AppCompatActivity {
     //Create objects for all the widgets
     TextView tv_to,tv_from,tv_result;
