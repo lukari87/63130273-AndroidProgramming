@@ -24,7 +24,7 @@
         android:layout_below="@id/imageView"
         android:layout_centerHorizontal="true"
         android:text="Phạm Ngọc Duy"
-        android:textColor="#31363F"
+        android:textColor="#F9F07A"
         android:textSize="24sp"
         android:textStyle="bold"
         android:layout_marginTop="20dp"/>
