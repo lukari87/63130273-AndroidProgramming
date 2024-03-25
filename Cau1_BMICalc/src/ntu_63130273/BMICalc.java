@@ -16,14 +16,14 @@ import javax.swing.DefaultComboBoxModel;
 
 public class BMICalc extends JFrame {
 
-	
+	private JComboBox<String> cbGender;
+	private JComboBox<String> cbHeightUnit;
 	private JPanel contentPane;
     private JTextField txtHeight;
     private JTextField txtWeight;
     private JTextField txtBMI;
     private JTextField txtStatus;
-    private JComboBox<String> cbGender;
-    private JComboBox<String> cbHeightUnit;
+ 
 	protected Object frame;
 
 
@@ -41,17 +41,21 @@ public class BMICalc extends JFrame {
         setContentPane(contentPane);
         contentPane.setLayout(null);
         
-        JLabel lblHeight = new JLabel("Chiều cao (cm):");
-        lblHeight.setFont(new Font("#9Slide02 Tieu de dai", Font.PLAIN, 16));
-        lblHeight.setBounds(20, 20, 120, 30);
-        contentPane.add(lblHeight);
-        
         txtHeight = new JTextField();
         txtHeight.setFont(new Font("#9Slide01 Tieu de ngan", Font.PLAIN, 16));
         txtHeight.setBounds(150, 20, 200, 30);
         contentPane.add(txtHeight);
         
+        JLabel lblHeight = new JLabel("Chiều cao (cm):");
+        lblHeight.setForeground(new Color(128, 128, 192));
+        lblHeight.setFont(new Font("#9Slide02 Tieu de dai", Font.PLAIN, 16));
+        lblHeight.setBounds(20, 20, 120, 30);
+        contentPane.add(lblHeight);
+        
+        
+        
         JLabel lblWeight = new JLabel("Cân nặng (kg):");
+        lblWeight.setForeground(new Color(128, 128, 192));
         lblWeight.setFont(new Font("#9Slide02 Tieu de dai", Font.PLAIN, 16));
         lblWeight.setBounds(20, 60, 120, 30);
         contentPane.add(lblWeight);
@@ -62,17 +66,21 @@ public class BMICalc extends JFrame {
         contentPane.add(txtWeight);
         
         JLabel lblGender = new JLabel("Giới tính:");
+        lblGender.setForeground(new Color(128, 128, 192));
         lblGender.setFont(new Font("#9Slide01 Tieu de ngan", Font.PLAIN, 16));
         lblGender.setBounds(20, 100, 120, 30);
         contentPane.add(lblGender);
         
         cbGender = new JComboBox<>(new String[] {"Nam", "Nữ"});
+        cbGender.setForeground(new Color(128, 128, 192));
         cbGender.setModel(new DefaultComboBoxModel(new String[] {"Male", "FeMale"}));
         cbGender.setFont(new Font("#9Slide01 Noi dung ngan", Font.PLAIN, 16));
         cbGender.setBounds(150, 100, 200, 30);
         contentPane.add(cbGender);
         
         JButton btnCalculate = new JButton("TÍNH BMI");
+        btnCalculate.setForeground(new Color(128, 128, 192));
+        btnCalculate.setBackground(new Color(189, 189, 255));
         btnCalculate.setFont(new Font("#9Slide01 Tieu de ngan", Font.PLAIN, 16));
         btnCalculate.setBounds(150, 140, 200, 30);
         btnCalculate.addActionListener(new ActionListener() {
@@ -83,6 +91,7 @@ public class BMICalc extends JFrame {
         contentPane.add(btnCalculate);
         
         JLabel lblBMI = new JLabel("Chỉ số BMI:");
+        lblBMI.setForeground(new Color(128, 128, 192));
         lblBMI.setFont(new Font("#9Slide01 Tieu de ngan", Font.PLAIN, 16));
         lblBMI.setBounds(20, 180, 120, 30);
         contentPane.add(lblBMI);
@@ -94,6 +103,7 @@ public class BMICalc extends JFrame {
         contentPane.add(txtBMI);
         
         JLabel lblStatus = new JLabel("Trạng thái:");
+        lblStatus.setForeground(new Color(128, 128, 192));
         lblStatus.setFont(new Font("#9Slide01 Tieu de ngan", Font.PLAIN, 16));
         lblStatus.setBounds(20, 220, 120, 30);
         contentPane.add(lblStatus);
