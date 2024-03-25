@@ -1,4 +1,4 @@
-package com.example.currencyconverter;
+package ntu_63130273.cau2_curchange;
 
 import androidx.appcompat.app.AppCompatActivity;
 
