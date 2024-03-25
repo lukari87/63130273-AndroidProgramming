@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         btnaus=findViewById(R.id.btnaus);
         btncan=findViewById(R.id.btncan);
         btneuro=findViewById(R.id.btneur);
-        btnjpy=findViewById(R.id.btnjpy);
+
     }
 
     //Now We will create click listeners for each button
