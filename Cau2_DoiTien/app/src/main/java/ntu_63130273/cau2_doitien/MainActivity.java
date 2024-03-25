@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
                 result=Integer.parseInt(amount)*(pkr);
                 tv_result.setText(String.valueOf(result));
                 tv_to.setText("GDP");
-                tv_from.setText("GDP = 31200VND");
+                tv_from.setText("GDP = 31200 VND");
             }
         });
         btnaus.setOnClickListener(new View.OnClickListener() {
