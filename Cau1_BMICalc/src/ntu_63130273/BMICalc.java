@@ -1,72 +1,130 @@
 package ntu_63130273;
 
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Font;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JComboBox;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.Color;
 
-public class BMICalc {
-    JFrame frame;
-    private JTextField heightField;
-    private JTextField weightField;
-    private JLabel bmiLabel;
 
-    public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                	BMICalc window = new BMICalc();
-                    window.frame.setVisible(true);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+public class BMICalc extends JFrame {
+
+	
+	private JPanel contentPane;
+    private JTextField txtHeight;
+    private JTextField txtWeight;
+    private JTextField txtBMI;
+    private JTextField txtStatus;
+    private JComboBox<String> cbGender;
+    private JComboBox<String> cbHeightUnit;
+	protected Object frame;
+
+
+	public BMICalc() {
+		setFont(new Font("Arial", Font.PLAIN, 13));
+		setBackground(new Color(52, 52, 52));
+		setTitle("BMI Calculator");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setBounds(100, 100, 482, 400);
+        contentPane = new JPanel();
+        contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+        setContentPane(contentPane);
+        contentPane.setLayout(null);
+        
+        JLabel lblHeight = new JLabel("Chiều cao:");
+        lblHeight.setFont(new Font("Montserrat", Font.PLAIN, 16));
+        lblHeight.setBounds(20, 20, 120, 30);
+        contentPane.add(lblHeight);
+        
+        txtHeight = new JTextField();
+        txtHeight.setFont(new Font("Montserrat", Font.PLAIN, 16));
+        txtHeight.setBounds(150, 20, 200, 30);
+        contentPane.add(txtHeight);
+        
+        cbHeightUnit = new JComboBox<>(new String[] {"cm", "m"});
+        cbHeightUnit.setFont(new Font("Montserrat", Font.PLAIN, 16));
+        cbHeightUnit.setBounds(360, 20, 50, 30);
+        contentPane.add(cbHeightUnit);
+        
+        JLabel lblWeight = new JLabel("Cân nặng (kg):");
+        lblWeight.setFont(new Font("Montserrat", Font.PLAIN, 16));
+        lblWeight.setBounds(20, 60, 120, 30);
+        contentPane.add(lblWeight);
+        
+        txtWeight = new JTextField();
+        txtWeight.setFont(new Font("Montserrat", Font.PLAIN, 16));
+        txtWeight.setBounds(150, 60, 200, 30);
+        contentPane.add(txtWeight);
+        
+        JLabel lblGender = new JLabel("Giới tính:");
+        lblGender.setFont(new Font("Montserrat", Font.PLAIN, 16));
+        lblGender.setBounds(20, 100, 120, 30);
+        contentPane.add(lblGender);
+        
+        cbGender = new JComboBox<>(new String[] {"Nam", "Nữ"});
+        cbGender.setFont(new Font("Montserrat", Font.PLAIN, 16));
+        cbGender.setBounds(150, 100, 200, 30);
+        contentPane.add(cbGender);
+        
+        JButton btnCalculate = new JButton("Tính BMI");
+        btnCalculate.setFont(new Font("Montserrat", Font.PLAIN, 16));
+        btnCalculate.setBounds(150, 140, 200, 30);
+        btnCalculate.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                calculateBMI();
             }
         });
+        contentPane.add(btnCalculate);
+        
+        JLabel lblBMI = new JLabel("Chỉ số BMI:");
+        lblBMI.setFont(new Font("Montserrat", Font.PLAIN, 16));
+        lblBMI.setBounds(20, 180, 120, 30);
+        contentPane.add(lblBMI);
+        
+        txtBMI = new JTextField();
+        txtBMI.setEditable(false);
+        txtBMI.setFont(new Font("Montserrat", Font.PLAIN, 16));
+        txtBMI.setBounds(150, 180, 200, 30);
+        contentPane.add(txtBMI);
+        
+        JLabel lblStatus = new JLabel("Trạng thái:");
+        lblStatus.setFont(new Font("Montserrat", Font.PLAIN, 16));
+        lblStatus.setBounds(20, 220, 120, 30);
+        contentPane.add(lblStatus);
+        
+        txtStatus = new JTextField();
+        txtStatus.setEditable(false);
+        txtStatus.setFont(new Font("Montserrat", Font.PLAIN, 16));
+        txtStatus.setBounds(150, 220, 200, 30);
+        contentPane.add(txtStatus);
+	}
+        
+	private void calculateBMI() {
+        double height = Double.parseDouble(txtHeight.getText());
+        if (cbHeightUnit.getSelectedItem().equals("cm")) {
+            height /= 100; // convert cm to m
+        }
+        double weight = Double.parseDouble(txtWeight.getText());
+        double bmi = weight / (height * height);
+        txtBMI.setText(String.format("%.2f", bmi));
+
+        String status;
+        if (bmi < 18.5) {
+            status = "Quá ốm";
+        } else if (bmi < 24.9) {
+            status = "Bình thường";
+        } else if (bmi < 29.9) {
+            status = "Hơi béo";
+        } else {
+            status = "Béo phì";
+        }
+        txtStatus.setText(status);
     }
 
-    public BMICalc() {
-        initialize();
-    }
-
-    private void initialize() {
-        frame = new JFrame();
-        frame.setBounds(100, 100, 300, 200);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.getContentPane().setLayout(null);
-
-        JLabel heightLabel = new JLabel("Chiều cao (m):");
-        heightLabel.setBounds(10, 10, 100, 30);
-        frame.getContentPane().add(heightLabel);
-
-        heightField = new JTextField();
-        heightField.setBounds(120, 10, 150, 30);
-        frame.getContentPane().add(heightField);
-        heightField.setColumns(10);
-
-        JLabel weightLabel = new JLabel("Cân nặng (kg):");
-        weightLabel.setBounds(10, 50, 100, 30);
-        frame.getContentPane().add(weightLabel);
-
-        weightField = new JTextField();
-        weightField.setBounds(120, 50, 150, 30);
-        frame.getContentPane().add(weightField);
-        weightField.setColumns(10);
-
-        JButton calcButton = new JButton("Tính BMI");
-        calcButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent arg0) {
-                double height = Double.parseDouble(heightField.getText());
-                double weight = Double.parseDouble(weightField.getText());
-                double bmi = weight / (height * height);
-                bmiLabel.setText(String.format("Chỉ số BMI của bạn: %.2f", bmi));
-            }
-        });
-        calcButton.setBounds(10, 90, 100, 30);
-        frame.getContentPane().add(calcButton);
-
-        bmiLabel = new JLabel("");
-        bmiLabel.setBounds(120, 90, 200, 30);
-        frame.getContentPane().add(bmiLabel);
-    }
 }
-
