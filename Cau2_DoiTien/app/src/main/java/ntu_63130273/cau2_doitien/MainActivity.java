@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 //again converted integer value into string because android system works with strings
                 tv_result.setText(String.valueOf(result));
                 tv_to.setText("USD");
-                tv_from.setText("US$ = 26000 VND");
+                tv_from.setText("US$ = 25800 VND");
             }
         });
         btngbp.setOnClickListener(new View.OnClickListener() {
