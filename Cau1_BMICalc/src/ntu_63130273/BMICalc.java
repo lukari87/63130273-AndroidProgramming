@@ -42,7 +42,7 @@ public class BMICalc extends JFrame {
         contentPane.setLayout(null);
         
         JLabel lblHeight = new JLabel("Chiều cao (cm):");
-        lblHeight.setFont(new Font("#9Slide02 Tieu de dai", Font.PLAIN, 16));
+        lblHeight.setFont(new Font("#9Slide02 Tieu de dai", Font.PLAIN, 16))
         lblHeight.setBounds(20, 20, 120, 30);
         contentPane.add(lblHeight);
         
