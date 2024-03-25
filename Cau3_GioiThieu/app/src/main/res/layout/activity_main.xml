@@ -63,17 +63,6 @@
         android:textSize="24sp"
         android:textStyle="bold"
         android:layout_marginTop="20dp"/>
-    <TextView
-        android:id="@+id/lophocphan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/mssv"
-        android:layout_centerHorizontal="true"
-        android:text="Lớp: 63.CNTT-1"
-        android:textColor="#31363F`"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_marginTop="20dp"/>
 
 
 </RelativeLayout>
