@@ -46,57 +46,57 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //here we get user input into this variable
                 amount=edt_amount.getText().toString();
-                pkr=178;
+                pkr=26000;
                 //integer.parse used to convert string value into integer for calculcatin purpose
                 result=Integer.parseInt(amount)*(pkr);
                 //again converted integer value into string because android system works with strings
                 tv_result.setText(String.valueOf(result));
                 tv_to.setText("USD");
-                tv_from.setText("US$ = 178Pkr");
+                tv_from.setText("US$ = 26000 VND");
             }
         });
         btngbp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 amount=edt_amount.getText().toString();
-                pkr=239;
+                pkr=3436;
                 result=Integer.parseInt(amount)*(pkr);
                 tv_result.setText(String.valueOf(result));
-                tv_to.setText("GBP");
-                tv_from.setText("GBP = 239Pkr");
+                tv_to.setText("GDP");
+                tv_from.setText("GDP = 31000VND");
             }
         });
         btnaus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 amount=edt_amount.getText().toString();
-                pkr=127;
+                pkr=16000;
                 result=Integer.parseInt(amount)*(pkr);
                 tv_result.setText(String.valueOf(result));
                 tv_to.setText("AUS$");
-                tv_from.setText("AUS$ = 127Pkr");
+                tv_from.setText("AUS$ = 16000 VND");
             }
         });
         btncan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 amount=edt_amount.getText().toString();
-                pkr=139;
+                pkr=18200;
                 result=Integer.parseInt(amount)*(pkr);
                 tv_result.setText(String.valueOf(result));
                 tv_to.setText("CAN$");
-                tv_from.setText("CAN$ = 139Pkr");
+                tv_from.setText("CAN$ = 18200 VND");
             }
         });
         btneuro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 amount=edt_amount.getText().toString();
-                pkr=199;
+                pkr=26700;
                 result=Integer.parseInt(amount)*(pkr);
                 tv_result.setText(String.valueOf(result));
                 tv_to.setText("EURO");
-                tv_from.setText("EURO = 199Pkr");
+                tv_from.setText("EURO = 26700 VND");
             }
         });
         btnjpy.setOnClickListener(new View.OnClickListener() {
@@ -104,11 +104,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 amount=edt_amount.getText().toString();
                 //here we used double data type instead of int bcz the value is in float form
-                double pkrr=1.52;
-                double resultt=Double.parseDouble(amount)*(pkrr);
+                double VND=163;
+                double resultt=Double.parseDouble(amount)*(pkr);
                 tv_result.setText(String.valueOf(resultt));
                 tv_to.setText("JPY");
-                tv_from.setText("JPY = 1.52Pkr");
+                tv_from.setText("JPY = 163 VND");
             }
         });
     }
