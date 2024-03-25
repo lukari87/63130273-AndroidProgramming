@@ -11,6 +11,7 @@ import javax.swing.JComboBox;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.Color;
+import javax.swing.DefaultComboBoxModel;
 
 
 public class BMICalc extends JFrame {
@@ -27,18 +28,21 @@ public class BMICalc extends JFrame {
 
 
 	public BMICalc() {
-		setFont(new Font("Arial", Font.PLAIN, 13));
+		setForeground(new Color(49, 49, 49));
+		setFont(new Font("#9Slide01 Tieu de ngan", Font.PLAIN, 15));
 		setBackground(new Color(52, 52, 52));
 		setTitle("BMI Calculator");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 482, 400);
         contentPane = new JPanel();
+        contentPane.setBackground(new Color(255, 191, 191));
+        contentPane.setForeground(new Color(149, 149, 202));
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
         contentPane.setLayout(null);
         
         JLabel lblHeight = new JLabel("Chiều cao:");
-        lblHeight.setFont(new Font("Montserrat", Font.PLAIN, 16));
+        lblHeight.setFont(new Font("#9Slide01 Tieu de ngan", Font.PLAIN, 16));
         lblHeight.setBounds(20, 20, 120, 30);
         contentPane.add(lblHeight);
         
@@ -48,12 +52,12 @@ public class BMICalc extends JFrame {
         contentPane.add(txtHeight);
         
         cbHeightUnit = new JComboBox<>(new String[] {"cm", "m"});
-        cbHeightUnit.setFont(new Font("Montserrat", Font.PLAIN, 16));
+        cbHeightUnit.setFont(new Font("#9Slide02 Noi dung dai", Font.PLAIN, 16));
         cbHeightUnit.setBounds(360, 20, 50, 30);
         contentPane.add(cbHeightUnit);
         
         JLabel lblWeight = new JLabel("Cân nặng (kg):");
-        lblWeight.setFont(new Font("Montserrat", Font.PLAIN, 16));
+        lblWeight.setFont(new Font("#9Slide02 Tieu de dai", Font.PLAIN, 16));
         lblWeight.setBounds(20, 60, 120, 30);
         contentPane.add(lblWeight);
         
@@ -63,17 +67,18 @@ public class BMICalc extends JFrame {
         contentPane.add(txtWeight);
         
         JLabel lblGender = new JLabel("Giới tính:");
-        lblGender.setFont(new Font("Montserrat", Font.PLAIN, 16));
+        lblGender.setFont(new Font("#9Slide01 Tieu de ngan", Font.PLAIN, 16));
         lblGender.setBounds(20, 100, 120, 30);
         contentPane.add(lblGender);
         
         cbGender = new JComboBox<>(new String[] {"Nam", "Nữ"});
-        cbGender.setFont(new Font("Montserrat", Font.PLAIN, 16));
+        cbGender.setModel(new DefaultComboBoxModel(new String[] {"Male", "FeMale"}));
+        cbGender.setFont(new Font("#9Slide01 Noi dung ngan", Font.PLAIN, 16));
         cbGender.setBounds(150, 100, 200, 30);
         contentPane.add(cbGender);
         
-        JButton btnCalculate = new JButton("Tính BMI");
-        btnCalculate.setFont(new Font("Montserrat", Font.PLAIN, 16));
+        JButton btnCalculate = new JButton("TÍNH BMI");
+        btnCalculate.setFont(new Font("#9Slide01 Tieu de ngan", Font.PLAIN, 16));
         btnCalculate.setBounds(150, 140, 200, 30);
         btnCalculate.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -83,7 +88,7 @@ public class BMICalc extends JFrame {
         contentPane.add(btnCalculate);
         
         JLabel lblBMI = new JLabel("Chỉ số BMI:");
-        lblBMI.setFont(new Font("Montserrat", Font.PLAIN, 16));
+        lblBMI.setFont(new Font("#9Slide01 Tieu de ngan", Font.PLAIN, 16));
         lblBMI.setBounds(20, 180, 120, 30);
         contentPane.add(lblBMI);
         
@@ -94,7 +99,7 @@ public class BMICalc extends JFrame {
         contentPane.add(txtBMI);
         
         JLabel lblStatus = new JLabel("Trạng thái:");
-        lblStatus.setFont(new Font("Montserrat", Font.PLAIN, 16));
+        lblStatus.setFont(new Font("#9Slide01 Tieu de ngan", Font.PLAIN, 16));
         lblStatus.setBounds(20, 220, 120, 30);
         contentPane.add(lblStatus);
         
