@@ -36,7 +36,7 @@
         android:layout_below="@id/textViewName"
         android:layout_centerHorizontal="true"
         android:text="Giới Thiệu Bản Thân:"
-        android:textColor="#31363F"
+        android:textColor="#F9F07A"
         android:textSize="24sp"
         android:textStyle="bold"
         android:layout_marginTop="20dp"/>
