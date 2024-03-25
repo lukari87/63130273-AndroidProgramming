@@ -41,8 +41,8 @@ public class BMICalc extends JFrame {
         setContentPane(contentPane);
         contentPane.setLayout(null);
         
-        JLabel lblHeight = new JLabel("Chiều cao:");
-        lblHeight.setFont(new Font("#9Slide01 Tieu de ngan", Font.PLAIN, 16));
+        JLabel lblHeight = new JLabel("Chiều cao (cm):");
+        lblHeight.setFont(new Font("#9Slide02 Tieu de dai", Font.PLAIN, 16));
         lblHeight.setBounds(20, 20, 120, 30);
         contentPane.add(lblHeight);
         
@@ -50,11 +50,6 @@ public class BMICalc extends JFrame {
         txtHeight.setFont(new Font("Montserrat", Font.PLAIN, 16));
         txtHeight.setBounds(150, 20, 200, 30);
         contentPane.add(txtHeight);
-        
-        cbHeightUnit = new JComboBox<>(new String[] {"cm"});
-        cbHeightUnit.setFont(new Font("#9Slide02 Noi dung dai", Font.PLAIN, 16));
-        cbHeightUnit.setBounds(360, 20, 50, 30);
-        contentPane.add(cbHeightUnit);
         
         JLabel lblWeight = new JLabel("Cân nặng (kg):");
         lblWeight.setFont(new Font("#9Slide02 Tieu de dai", Font.PLAIN, 16));
@@ -128,5 +123,4 @@ public class BMICalc extends JFrame {
         }
         txtStatus.setText(status);
     }
-
 }
