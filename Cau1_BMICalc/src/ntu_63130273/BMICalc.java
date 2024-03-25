@@ -47,7 +47,7 @@ public class BMICalc extends JFrame {
         contentPane.add(lblHeight);
         
         txtHeight = new JTextField();
-        txtHeight.setFont(new Font("Montserrat", Font.PLAIN, 16));
+        txtHeight.setFont(new Font("#9Slide01 Tieu de ngan", Font.PLAIN, 16));
         txtHeight.setBounds(150, 20, 200, 30);
         contentPane.add(txtHeight);
         
